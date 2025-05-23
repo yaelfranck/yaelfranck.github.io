@@ -1,15 +1,25 @@
 /* text style */
 
 body {
-  color: black;
+  color: rgb(52, 52, 52);
   font-family: "neue-haas-grotesk-text", sans-serif;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 18px;
+  line-height: 25px;
+  margin: 10px;
+  background-color: rgb(255, 252, 247);
 }
 
 div.title {
-  font-size: 220px;
-  line-height: 160px;
+  font-size: 200px;
+  line-height: 180px;
+}
+
+h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  line-height: 35px;
+  font-weight: bolder;
+  color: rgb(52, 52, 52);
 }
 
 /* colours */
@@ -86,6 +96,11 @@ div.funky {
 
 /* sizes */
 
+div.small {
+  font-size: 13px;
+  line-height: 13px;
+}
+
 div.medium {
   font-size: 40px;
   line-height: 36px;
@@ -116,8 +131,16 @@ div.mblarge {
   margin-bottom: 100px;
 }
 
+div.mbxlarge {
+  margin-bottom: 250px;
+}
+
 div.mt {
   margin-top: 100px;
+}
+
+div.mtsmall {
+  margin-top: 10px;
 }
 
 div.mr {
@@ -179,12 +202,44 @@ div.width75 {
   width: 75%;
 }
 
+div.width33 {
+  width: 33%;
+}
+
 /* Container */
 
 div.container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+}
+
+div.pg {
+  margin-inline: 250px;
+}
+
+div.pg-left {
+  text-align: left;
+  margin-left: 480px;
+}
+
+div.pg-right {
+  text-align: right;
+  margin-right: 480px;
+}
+
+div.imgtext {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 270px;
+  padding: 10px;
+  align-items: center;
+  gap: 50px;
+  /* border-radius: 15px;
+  border-style: solid; */
+  /* border-color: rgb(200, 200, 200); */
+  /* border-width: 1px; */
+  /* background-color: rgb(252, 251, 251); */
 }
 
 /* allignment */
@@ -202,17 +257,52 @@ div.wavy {
 }
 
 div.card {
-  padding: 30px;
-  background-color: lightgray;
-  border-radius: 50px;
-  box-shadow: 8px 8px rgb(49, 49, 49);
+  padding: 15px 30px;
+  gap: 20px;
+  background-color: rgb(252, 251, 251);
+  border-radius: 15px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216);
+  border-width: 1px;
+  box-shadow: 6px 6px 6px rgba(219, 218, 218, 0.312);
+  width: 300px;
+  height: auto;
+}
+
+div.card-row {
+  display: flex;
+  flex-direction: row;
+  margin-inline: auto;
+  gap: 30px;
+}
+
+.button {
+  float: right;
+  border: none;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 40px 0px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button1 {
+  background-color: rgb(106, 136, 166);
+  color: whitesmoke;
+}
+
+.button1:hover {
+  background-color: rgb(56, 74, 92);
+  color: whitesmoke;
 }
 
 div.pcard {
   padding: 30px;
   background-color: magenta;
   border-radius: 50px;
-  box-shadow: 8px 8px rgb(49, 49, 49);
 }
 div.underline {
   text-decoration: underline;
@@ -239,11 +329,57 @@ div.opac25 {
   right: 20px;
   bottom: 20px;
   z-index: 1000;
+  border-radius: 8px;
+}
+
+/* welcome splash page */
+
+.welcome {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+.welcome.visible {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* images */
 
-div.img {
-  width: 25%;
-  object-fit: cover;
+img.largeimg {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
 }
+
+img.smallimg {
+  width: 600px;
+  height: auto;
+}
+
+/* popups */
+
+div.popup {
+  position: fixed;
+  top: 200px;
+  left: 200px;
+  background-color: lime;
+  width: 300px;
+  height: 300px;
+}
+
+div.hide {
+  display: none;
+}
+
+/* triggers and effects */

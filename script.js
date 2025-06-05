@@ -12,20 +12,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
   video.addEventListener("timeupdate", function () {
     const changesAtCurrentTime = classChanges.filter(
-      change => video.currentTime >= change.time && !appliedTimes[change.time]
+      (change) => video.currentTime >= change.time && !appliedTimes[change.time]
     );
 
-    changesAtCurrentTime.forEach(change => {
+    changesAtCurrentTime.forEach((change) => {
       const elements = document.querySelectorAll(change.target);
 
       if (change.remove) {
-        const removeClasses = Array.isArray(change.remove) ? change.remove : [change.remove];
-        elements.forEach(el => removeClasses.forEach(cls => el.classList.remove(cls)));
+        const removeClasses = Array.isArray(change.remove)
+          ? change.remove
+          : [change.remove];
+        elements.forEach((el) =>
+          removeClasses.forEach((cls) => el.classList.remove(cls))
+        );
       }
 
       if (change.add) {
-        const addClasses = Array.isArray(change.add) ? change.add : [change.add];
-        elements.forEach(el => addClasses.forEach(cls => el.classList.add(cls)));
+        const addClasses = Array.isArray(change.add)
+          ? change.add
+          : [change.add];
+        elements.forEach((el) =>
+          addClasses.forEach((cls) => el.classList.add(cls))
+        );
       }
 
       appliedTimes[change.time] = true;
